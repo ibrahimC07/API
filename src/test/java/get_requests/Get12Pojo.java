@@ -20,25 +20,24 @@ public class Get12Pojo extends RestfulBaseUrl {
         And
             Response body is like:
                          {
-                          "firstname": "Dane",
-                           "lastname": "Combs",
-                           "totalprice": 111,
-                           "depositpaid": true,
-                           "bookingdates": {
-                               "checkin": "2018-01-01",
-                               "checkout": "2019-01-01"
-                           },
-                           "additionalneeds": "Breakfast"
-                       }
+                    "firstname": "Sally",
+                     "lastname": "Brown",
+                     "totalprice": 111,
+                     "depositpaid": true,
+                     "bookingdates": {
+                         "checkin": "2013-02-23",
+                         "checkout": "2014-10-23"
+                     },
+                     "additionalneeds": "Breakfast"
     */
     @Test
     public void get12Pojo(){
         //Set the Url
-        spec.pathParams("first","booking","second",18);
+        spec.pathParams("first","booking","second",20);
 
         //Set the Expected Data
-        BookingDatesPojo bookingDatesPojo = new BookingDatesPojo("2018-01-01","2019-01-01");
-        BookingPojo expectedData = new BookingPojo("Dane","Combs",111,true,bookingDatesPojo,"Breakfast");
+        BookingDatesPojo bookingDatesPojo = new BookingDatesPojo("2013-02-23","2014-10-23");
+        BookingPojo expectedData = new BookingPojo("Sally","Brown",111,true,bookingDatesPojo,"Breakfast");
         System.out.println("expectedData = " + expectedData);
 
         //Send the Request and Get the Response
